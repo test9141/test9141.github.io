@@ -1426,3 +1426,322 @@ footer .item:last-child {
  z-index: 10;
  width: 100%;
 }
+html {
+    overflow: hidden;
+/*    position: fixed;
+    top: 0;
+    left: 0; */
+/*    overflow-anchor: none; */
+}
+
+body {
+/*    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0; */
+/*    overflow-anchor: none; */
+}
+
+#box2 {
+	padding: 0.5em 0em 0.5em 0em;
+}
+
+#nme2 {
+	font-family: "Exo 2";
+	border: none;
+	background-color: transparent;
+/*	height: 10%; */
+	padding: 0 0.5em;
+	width: 100%;
+	color: white;
+	font-size: 16px;
+}
+
+#msg2 {
+	font-family: "Exo 2";
+	border: none;
+	background-color: transparent;
+	/* height: 10%; */
+	padding: 0 0.5em;
+	width: 100%;
+	color: white;
+	font-size: 16px;
+}
+
+#name2 {
+/*    padding: 0 0.5em 0 0.5em;*/
+    margin: 0;
+/*    position: absolute;*/
+    top: 1em;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+	font-family: "Exo 2";
+	display: flex;
+    flex-direction: row;
+	height: 40px;
+}
+
+/* body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+	font-family: "Exo 2";
+	color: white;
+} */
+
+#log2 {
+/*    background-color: #101010; */
+margin: 0;padding: 0.5em 0.5em 0.5em 0.5em;
+/*  position: absolute;*/
+top: 3em;
+left: 0.5em;
+right: 0.5em;
+bottom: 3em;
+overflow: auto;
+/*	width: 540px; */
+flex-direction: column-reverse;
+display: flex;
+flex-grow: 1;
+height: calc(100vh - 148px);
+overflow-y: auto;
+}
+
+/* #log > :first-child {
+  margin-top: auto;
+} */
+
+#message2 {
+/*    padding: 0 0.5em 0 0.5em;*/
+    margin: 0;
+/*    position: absolute;*/
+    bottom: 1em;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+	font-family: "Exo 2";
+	display: flex;
+    flex-direction: row;
+	height: 40px;
+}
+
+#colorpicker2 {
+    /* color: rgb(53, 84, 192); */
+    width: 50px;
+    /* height: 21px; */
+    /* background-color: rgb(53, 84, 192); */
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#send2 {
+	width: 50px;
+}
+
+/* @font-face {
+  font-family: "Exo 2";
+  src: url('/static/Exo2-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+html {
+    overflow: hidden;
+/*    position: fixed;
+    top: 0;
+    left: 0; */
+/*    overflow-anchor: none; */
+}
+
+body {
+/*    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0; */
+/*    overflow-anchor: none; */
+}
+
+#box3 {
+	padding: 0.5em 0em 0.5em 0em;
+}
+
+#nme3 {
+	font-family: "Exo 2";
+	border: none;
+	background-color: transparent;
+	/*	height: 10%; */
+	padding: 0 0.5em;
+	width: 100%;
+	color: white;
+	font-size: 16px;
+}
+
+#msg3 {
+	font-family: "Exo 2";
+	border: none;
+	background-color: transparent;
+/*	height: 10%; */
+	padding: 0 0.5em;
+	width: 100%;
+	color: white;
+	font-size: 16px;
+}
+
+#name3 {margin: 0;width: 100%;overflow: hidden;font-family: "Exo 2";display: flex;flex-direction: row;height: 40px;}
+
+/* body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+	font-family: "Exo 2";
+	color: white;
+} */
+
+#log3 {
+    /*    background-color: #101010; */
+    margin: 0;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    /*  position: absolute;*/
+    top: 3em;
+    left: 0.5em;
+    right: 0.5em;
+    bottom: 3em;
+    overflow: auto;
+    /*	width: 540px; */
+    flex-direction: column-reverse;
+    display: flex;
+    flex-grow: 1;
+    height: calc(100vh - 148px);
+    overflow-y: auto;
+}
+
+/* #log > :first-child {
+  margin-top: auto;
+} */
+
+#message3 {
+/*    padding: 0 0.5em 0 0.5em;*/
+    margin: 0;
+/*    position: absolute;*/
+    bottom: 1em;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+	font-family: "Exo 2";
+	display: flex;
+    flex-direction: row;
+	height: 40px;
+}
+
+#colorpicker3 {
+    /* color: rgb(53, 84, 192); */
+    width: 50px;
+    /* height: 21px; */
+    /* background-color: rgb(53, 84, 192); */
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#send3 {
+	width: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.minnit {
+ /* height: 100%; */
+}
+
+/* @font-face {
+  font-family: "Exo 2";
+  src: url('/static/Exo2-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/**
+ * Fix user-agent
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Canvas
+ */
+
+.colorpicker-draw { 
+  border-radius: 10px; 
+  width: 48px;
+    height: 48px;
+    background-color: black;
+}
+
+.whiteboard {
+  height: 100%;
+  width: 100%;
+}
+
+/* .colors {
+  position: fixed;
+  margin-left: 10px;
+  margin-top: 10px;
+} */
+
+.colors {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.color {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+}
+
+.color.black { background-color: black; }
+.color.red { background-color: red; }
+.color.green { background-color: green; }
+.color.blue { background-color: blue; }
+.color.yellow { background-color: yellow; }
+
+#eraser {
+    width: 48px;
+    position: absolute;
+    left: 55px;
+    height: 48px;
+    top: 0px;
+    border-radius: 25px;
+    /* background-color: rgba(0, 0, 0, .75); */
+		background-color: grey;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    align-content: center;
+}
+
+#wipe {
+  position: absolute;
+  top: 50px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  left: 1px;
+}
