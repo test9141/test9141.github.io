@@ -1,22 +1,45 @@
 @font-face {
- font-family: 'Exo 2';
- url('/font/Exo2-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+ font-family: 'CoolveticaLT-RG';
+ src: url('/assets/webfonts/CoolveticaLt-Regular.woff2') format('truetype');
 }
 
 ::-webkit-scrollbar {
  display: none;
 }
 
+button {
+ font-family: 'CoolveticaLT-RG';
+}
+
+#logo-image {
+ grid-area: image;
+ font-weight: 500;
+ display: grid;
+ height: 80px;
+}
+#logo-style {
+ grid-area: logo;
+ font-weight: 500;
+ display: grid;
+ grid-template-areas:
+  "logo-top"
+  "logo-bottom";
+ grid-template-rows: 40px 40px;
+ margin: 0;
+}
+
 #chat2 {
-  width: 300px;
+  width: auto;
   display: flex;
   flex-direction: column-reverse;
+  height: calc(100% - 30px);
 }
 
 #chat3 {
   width: 400px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column-reverse;
+  height: 100%;
 }
 
 #secondChatServer {
@@ -47,6 +70,7 @@
  padding-left: 15px;
  scrollbar-color: transparent rgba(255, 255, 255, 0.05);
  scrollbar-width: none;
+ list-style: none;
 }
 .chatalt {
  height: 100%;
@@ -70,7 +94,7 @@
 }
 .blocksidebar {
  white-space: nowrap;
- position: absolute;
+ /* position: absolute; */
  left: 322px;
  height: 100%;
  bottom: 43px;
@@ -81,14 +105,14 @@
  position: fixed;
  top: 0;
  left: 0;
- width: 100vw;
- height: 100vh;
+ width: 100%;
+ height: 100%;
  object-fit: cover;
  z-index: 0;
  opacity: 1; /* Adjust opacity here */
 }
 .mobileblock {
- display: none;
+ /* display: none; */
 }
 .opac {
  /* opacity: 0.75; */
@@ -105,7 +129,7 @@
  padding: 0.5rem 1rem;
 }
 .all {
- position: absolute;
+ /* position: absolute; */
 }
 .mob {
  z-index: 1;
@@ -157,10 +181,10 @@
  overflow-y: scroll;
 }
 .blockedUsersListClass {
- position: absolute;
+ /* position: absolute; */
  left: 325px;
  top: 72%;
- transform: translateY(-50%);
+ /* transform: translateY(-50%); */
  color: rgb(255, 255, 255);
  padding: 5px;
  border: 1px solid rgba(255,255,255,0.15);
@@ -177,36 +201,36 @@
  scrollbar-width: none;
 }
 .blockInputClass {
- position: absolute;
- left: 325px;
- top: 79%;
- transform: translateY(-50%);
+ /* position: absolute; */
+ /* left: 325px; */
+ /* top: 79%; */
+ /* transform: translateY(-50%); */
  color: rgb(255, 255, 255);
  padding: 5px;
  border: 1px solid rgba(255,255,255,0.15);
  border-radius: 5px;
  width: 10px;
- backdrop-filter: blur(3px); 
+ backdrop-filter: blur(3px);
  background-color: rgba(29, 29, 29, 0.8);
 }
 .unblockInputClass {
- position: absolute;
- left: 325px;
- top: 87%;
- transform: translateY(-50%);
+ /* position: absolute; */
+ /* left: 325px; */
+ /* top: 87%; */
+ /* transform: translateY(-50%); */
  color: rgb(255, 255, 255);
  padding: 5px;
  border: 1px solid rgba(255,255,255,0.15);
  border-radius: 5px;
  width: 10px;
- backdrop-filter: blur(3px); 
+ backdrop-filter: blur(3px);
  background-color: rgba(29, 29, 29, 0.8);
 }
 .unblockAllButtonClass {
- position: absolute;
+ /* position: absolute; */
  left: 325px;
  top: 95%;
- transform: translateY(-50%);
+ /* transform: translateY(-50%); */
  color: rgb(255, 255, 255);
  padding: 5px;
  border: 1px solid rgba(255,255,255,0.15);
@@ -216,8 +240,8 @@
  background-color: rgba(29, 29, 29, 0.8);
 }
 .colorPickerClass {
- position: absolute;
- left: 325px;
+ /* position: absolute; */
+ /* left: 325px; */
  z-index: 1;
  padding: 5px;
  border: 1px solid rgba(255,255,255,0.15);
@@ -228,15 +252,13 @@
  background-color: rgba(29, 29, 29, 0.8);
 }
 .logotkr {
- width: 312px;
- position: absolute;
- bottom: 60px;
- text-align: center;
- justify-content: center;
+ width: auto;
  vertical-align: middle;
  display: inline-block;
  z-index: -10;
  justify-self: anchor-center;
+ height: 80px;
+ margin-top: 0px;
 }
 form {
  display:flex;
@@ -259,7 +281,7 @@ form .form-group:last-child {
 label {
  display:block;
  font-size:0.9rem;
- margin-bottom:0.5rem;
+ /* margin-bottom:0.5rem; */
 }
 input[type=checkbox],
 input[type=radio] {
@@ -323,7 +345,7 @@ input[type=text],
 select,
 textarea {
  padding:0.5rem;
- min-width:200px;
+ /* min-width:200px; */
 }
 input[type=text]:focus,
 select:focus,
@@ -338,7 +360,7 @@ textarea::placeholder {
 }
 input[type=text],
 select {
- max-width:350px;
+ /* max-width:350px; */
 }
 textarea {
  line-height:1.5em;
@@ -391,7 +413,7 @@ textarea {
 }
 .btn:hover {
  border-color:transparent;
- color:rgba(255,255,255,0.75);
+ /*color:rgba(255,255,255,0.75);*/
  text-shadow:0 0 0.5em rgba(255,255,255,0.5)
 }
 .btn .fa,
@@ -433,14 +455,15 @@ body {
  -ms-overflow-style: none;
  background-color:#1d1d1d;
  color:rgba(255,255,255,0.9);
- font-family:"Exo 2";
+ font-family: "CoolveticaLT-RG";
+ font-weight: 1000;
  font-size:16px;
  margin:0;
  padding:0;
- min-width:100vw;
- min-height:100vh;
- width:100vw;
- height:100vh;
+ min-width:100%;
+ min-height:100%;
+ width:100%;
+ height:100%;
  overflow-y: hidden;
  overflow-x: hidden;
 }
@@ -574,10 +597,13 @@ a[data-favorite]:hover {
  font-size: 1.25rem;
  font-weight: bold;
  padding: 1.5rem 1rem 0.5rem 1rem;
- background: radial-gradient(circle, violet, indigo, #7ff, green, yellow, orange, red);
+ background: linear-gradient(to right, violet, indigo, #7ff, green, yellow, orange, red);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
  /* display: none; */
+ background-size: 200px 100%; /* Fixed width, adjust as needed */
+ background-repeat: no-repeat;
+ font-weight: bold;
 }
 .sidebars .item a,
 .sidebars .item a:visited {
@@ -813,10 +839,10 @@ aside {
     left: -50vw;
     top: 2rem;
     z-index: 16000000;
-    /* width: calc(100vw - 2rem); */
+    /* width: calc(100% - 2rem); */
     width: 25%;
     max-width: 302px;
-    height: calc(100vh - 2rem);
+    height: calc(100% - 2rem);
     transition: left 0.25s;
 }
 .chatDesktop {
@@ -828,8 +854,8 @@ aside {
     left: -200vw;
     top: 2rem;
     z-index: 16000000;
-    width: calc(100vw - 2rem);
-    height: calc(100vh - 2rem);
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
 }
 .chatMobile {
  display: none;
@@ -854,7 +880,7 @@ body .main main {
 body .main main .viewport {
  display:flex;
  flex-direction:column;
- height:calc(100vh - 3rem);
+ height:calc(100% - 3rem);
 }
 body .main main .viewport .game {
  border:none;
@@ -941,7 +967,7 @@ body .chat-name {
  z-index: 10;
 }
 body .chat-name i:hover {
- background-color:rgba(255,255,255,0.1);
+ /*background-color:rgba(255,255,255,0.1);*/
  z-index: 10;
 }
 body .chat-messages {
@@ -1024,27 +1050,21 @@ footer .item:last-child {
  font-size:1.5rem;
  font-weight:bold
 }
-.iogames:hover {
- text-shadow:0 0 0.5rem rgba(255,255,255,0.9);
-}
-.fun:hover {
- text-shadow:0 0 0.5rem #fc0;
-}
-.logo a:hover .iogames,
-.logo a:visited:hover .iogames {
+.logo a:hover .anarchychats,
+.logo a:visited:hover .anarchychats {
  text-shadow:0 0 0.5rem rgba(255,255,255,0.9)
 }
-.logo a:hover .fun,
-.logo a:visited:hover .fun {
- text-shadow:0 0 0.5rem #fc0
+.logo a:hover .com,
+.logo a:visited:hover .com {
+ text-shadow:0 0 0.5rem #ff9999
 }
-.logo a .iogames,
-.logo a:visited .iogames {
+.logo a .anarchychats,
+.logo a:visited .anarchychats {
  color:rgba(255,255,255,0.9)
 }
-.logo a .fun,
-.logo a:visited .fun {
- color:#fc0;
+.logo a .com,
+.logo a:visited .com {
+ color:#ff9999;
 }
 .paginator {
  display:flex;
@@ -1240,7 +1260,7 @@ footer .item:last-child {
  color:#093;
  text-align:right
 }
-.admin {
+/*.admin {
  grid-template-areas:"nav nav" "sidebars top" "sidebars main";
  grid-template-columns:auto 1fr;
  grid-template-rows:auto auto 1fr
@@ -1284,28 +1304,61 @@ footer .item:last-child {
  border-radius:100%;
  width:50px;
  height:50px;
-}
+}*/
 .blur {
  backdrop-filter: blur(9px);
  opacity: 100%;
- background-color: transparent;
+ background-color: rgba(26, 27, 30, 0.6);
 }
 .plain-color {
  background-color: rgb(30,30,30);
  opacity: 100%;
+}
+.button.list.opac a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;    /* Fixed width */
+  height: 50px;   /* Fixed height */
+}
+.button.list.opac label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;    /* Fixed width */
+  height: 50px;   /* Fixed height */
+}
+.button.list.opac label:hover {
+  background-color: rgba(255,255,255,0.5);
+}
+.button.list.opac a:hover {
+  background-color: rgba(255,255,255,0.5);
 }
 #hoverButton {
  padding: 5px;
  border-radius: 5px;
  vertical-align: middle;
  display: inline-block;
+ user-select: none;
 }
 #hoverButton:hover {
  background-color: rgba(255,255,255,0.5);
 }
-.navButton:hover {
+
+.hoverButton {
+ padding: 5px;
+ border-radius: 5px;
+ vertical-align: middle;
+ display: inline-block;
+ user-select: none;
+}
+.hoverButton:hover {
  background-color: rgba(255,255,255,0.5);
 }
+
+/*.navButton:hover {
+ background-color: rgba(255,255,255,0.5);
+}*/
 .chatalt3 {
  height: 100%;
  scrollbar-width: none;
@@ -1365,10 +1418,12 @@ footer .item:last-child {
  width: 100%;
  grid-area: nav;
  display: grid;
- grid-template-areas: "logo button";
- grid-template-columns: auto 250px;
+ grid-template-areas:
+  "logo image button";
+ grid-template-columns: 225px auto 225px;
+ grid-template-rows: 80px;
  align-items: center;
- height: 50px;
+ height: 80px;
  z-index: 100;
 }
 #secLayer {
@@ -1389,25 +1444,16 @@ footer .item:last-child {
 #gridLayer {
  display: grid;
  grid-template-areas:
-  "nav nav nav"
-  "sidebar mid rsidebar"
-  "sidebar mid rsidebar"
-  "sidebar mid rsidebar";
- grid-template-columns: 300px auto 400px;
+  "nav nav"
+  "sidebar mid"
+  "sidebar mid"
+  "sidebar mid";
+ grid-template-columns: 50px auto;
  grid-template-rows: auto auto 1fr auto;
  height: 100%;
  width: 100%;
 }
-#logoStyle {
- grid-area: logo;
- font-weight: 500;
- display: grid;
- grid-template-areas:
- "logo-top"
- "logo-bottom";
- grid-template-rows: 25px 25px;
- margin: 0;
-}
+
 .mobileButton {
  display: none;
 }
@@ -1416,11 +1462,80 @@ footer .item:last-child {
 }
 .titleName {
  font-size: 20px;
+ font-weight: bold;
 }
 .subTitleName {
  font-size: 15px;
-:;
 }
+#thirdChatStyle {
+ grid-area: rsidebar;
+ z-index: 10;
+ width: 100%;
+}
+
+.background-page,
+.block-page,
+.chat-page,
+.draw-page,
+.game-page,
+.music-page {
+  position: fixed;
+  right: -100%;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  background-color: rgba(26, 27, 30, 0.6);
+  backdrop-filter: blur(9px);
+  opacity: 0;
+  transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.chatroom {
+  position: fixed;
+  right: -100%;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.chatroom-btns-page {
+  position: absolute;
+  right: -100%;
+  opacity: 0;
+  transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.background-page.active,
+.block-page.active,
+.chat-page.active,
+.draw-page.active,
+.game-page.active,
+.music-page.active {
+  right: 0px;
+  opacity: 1;
+  transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+.chatroom.active {
+  right: 0px;
+  opacity: 1;
+  transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+.chatroom-btns-page.active {
+  right: 0px;
+  opacity: 1;
+  transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+
+
+
+
+
+
+
 #thirdChatStyle {
  grid-area: rsidebar;
  z-index: 10;
@@ -1447,10 +1562,9 @@ body {
 }
 
 #nme2 {
-	font-family: "Exo 2";
 	border: none;
 	background-color: transparent;
-/*	height: 10%; */
+	/*	height: 10%; */
 	padding: 0 0.5em;
 	width: 100%;
 	color: white;
@@ -1458,7 +1572,6 @@ body {
 }
 
 #msg2 {
-	font-family: "Exo 2";
 	border: none;
 	background-color: transparent;
 	/* height: 10%; */
@@ -1468,19 +1581,7 @@ body {
 	font-size: 16px;
 }
 
-#name2 {
-/*    padding: 0 0.5em 0 0.5em;*/
-    margin: 0;
-/*    position: absolute;*/
-    top: 1em;
-    left: 0px;
-    width: 100%;
-    overflow: hidden;
-	font-family: "Exo 2";
-	display: flex;
-    flex-direction: row;
-	height: 40px;
-}
+#name2 {/*    padding: 0 0.5em 0 0.5em;*/margin: 0;/*    position: absolute;*/top: 1em;left: 0px;width: 100%;overflow: hidden;display: flex;flex-direction: row;height: 40px;}
 
 /* body {
     overflow: hidden;
@@ -1514,19 +1615,7 @@ overflow-y: auto;
   margin-top: auto;
 } */
 
-#message2 {
-/*    padding: 0 0.5em 0 0.5em;*/
-    margin: 0;
-/*    position: absolute;*/
-    bottom: 1em;
-    left: 0px;
-    width: 100%;
-    overflow: hidden;
-	font-family: "Exo 2";
-	display: flex;
-    flex-direction: row;
-	height: 40px;
-}
+#message2 {/*    padding: 0 0.5em 0 0.5em;*/margin: 0;/*    position: absolute;*/bottom: 1em;left: 0px;width: 100%;overflow: hidden;display: flex;flex-direction: row;height: 40px;}
 
 #colorpicker2 {
     /* color: rgb(53, 84, 192); */
@@ -1568,7 +1657,7 @@ body {
 }
 
 #nme3 {
-	font-family: "Exo 2";
+	/*font-family: "Exo 2";*/
 	border: none;
 	background-color: transparent;
 	/*	height: 10%; */
@@ -1579,17 +1668,17 @@ body {
 }
 
 #msg3 {
-	font-family: "Exo 2";
+	/* font-family: "Exo 2"; */
 	border: none;
 	background-color: transparent;
-/*	height: 10%; */
+	/*	height: 10%; */
 	padding: 0 0.5em;
 	width: 100%;
 	color: white;
 	font-size: 16px;
 }
 
-#name3 {margin: 0;width: 100%;overflow: hidden;font-family: "Exo 2";display: flex;flex-direction: row;height: 40px;}
+#name3 {margin: 0;width: 100%;overflow: hidden;/* font-family: "Exo 2"; */display: flex;flex-direction: row;height: 40px;}
 
 /* body {
     overflow: hidden;
@@ -1603,16 +1692,15 @@ body {
 } */
 
 #log3 {
-    /*    background-color: #101010; */
     margin: 0;
     padding: 0.5em 0.5em 0.5em 0.5em;
-    /*  position: absolute;*/
+    position: absolute;
     top: 3em;
     left: 0.5em;
     right: 0.5em;
     bottom: 3em;
     overflow: auto;
-    /*	width: 540px; */
+    width: auto;
     flex-direction: column-reverse;
     display: flex;
     flex-grow: 1;
@@ -1624,19 +1712,7 @@ body {
   margin-top: auto;
 } */
 
-#message3 {
-/*    padding: 0 0.5em 0 0.5em;*/
-    margin: 0;
-/*    position: absolute;*/
-    bottom: 1em;
-    left: 0px;
-    width: 100%;
-    overflow: hidden;
-	font-family: "Exo 2";
-	display: flex;
-    flex-direction: row;
-	height: 40px;
-}
+#message3 {padding: 0 0.5em 0 0.5em;margin: 0;position: absolute;bottom: 1em;left: 0px;width: 100%;overflow: hidden;/*font-family: "Exo 2";*/display: flex;flex-direction: row;height: 40px;}
 
 #colorpicker3 {
     /* color: rgb(53, 84, 192); */
