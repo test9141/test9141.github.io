@@ -1,6 +1,6 @@
 'use strict';
 
-function customFeature() {
+function music() {
     // Music feature
     const audio = document.getElementById('audioPlayer');
     const playPauseBtn = document.getElementById('playPauseBtn');
@@ -13,12 +13,12 @@ function customFeature() {
     const currentTime = document.getElementById('currentTime');
     const totalDuration = document.getElementById('totalDuration');
     const volumeSlider = document.getElementById('volumeSlider');
-    
+
     /*let trackIndex = 0;
     const tracks = [
-      { name: "Sample 1", 
+      { name: "Sample 1",
        src: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" },
-      { name: "Sample 2", 
+      { name: "Sample 2",
        src: "https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3" }
     ];*/
 
@@ -38,7 +38,7 @@ function customFeature() {
       } else {
         audio.pause();
         playPauseBtn.classList.remove("ti-player-pause");
-        playPauseBtn.classList.add("ti-player-play");      
+        playPauseBtn.classList.add("ti-player-play");
       }
     });
 
@@ -50,7 +50,7 @@ function customFeature() {
         return "Invalid URL";
       }
     }
-  
+
     // Custom music url
     var customMusic = document.getElementById('url-music'); // Textbox
     customMusic.addEventListener('input', () => {
@@ -66,7 +66,7 @@ function customFeature() {
     audio.addEventListener('timeupdate', () => {
       const percent = (audio.currentTime / audio.duration) * 100;
       seekSlider.value = percent || 0;
-    
+
       const mins = Math.floor(audio.currentTime / 60);
       const secs = Math.floor(audio.currentTime % 60);
       currentTime.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
@@ -99,7 +99,7 @@ function customFeature() {
       loadTrack(trackIndex);
       audio.play();
     });*/
-    
+
     // Load first track
     /*loadTrack(trackIndex);*/
 };
