@@ -1,11 +1,12 @@
-# anarchychat.github.io
+# Anarchy Chat
+Evolved from TKR
+
+Indulge in the Chaos (unless the chat is dead ofc)
+
 Website for Anarchy Chat
 
 Anarchy Chat is a more fully-featured chatting front end:
 
-it has color picking names, click to copy names, reduce spamming from unicodes, disable text wrapping to also reduce spam, and it has AN EXTRA BACKUP CHAT!
-
-did you guys know anarchy chat let's you block any person!!!!!1!! 🔥💯💯💯🥵🥵🥵🥵🥵 🥶
 
 https://anarchychats.com
 
