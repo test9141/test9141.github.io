@@ -597,9 +597,7 @@ a[data-favorite]:hover {
  font-size: 1.25rem;
  font-weight: bold;
  padding: 1.5rem 1rem 0.5rem 1rem;
- background: linear-gradient(to right, violet, indigo, #7ff, green, yellow, orange, red);
  -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
  /* display: none; */
  background-size: 200px 100%; /* Fixed width, adjust as needed */
  background-repeat: no-repeat;
