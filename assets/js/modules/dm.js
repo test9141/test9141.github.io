@@ -5,7 +5,7 @@
 	// - Doing any testing or debugging requires TWO browsers, 
 	// because otherwise they share the same localstorage and cookies
 	window.onload = function() {
-		var ws = new WebSocket("wss://dm-bzmb.eu");
+		var ws = new WebSocket("wss://dm.bzmb.eu");
 		var toId;
 		var fromId;
 		var privId;
