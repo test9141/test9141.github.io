@@ -6,6 +6,7 @@
 	// because otherwise they share the same localstorage and cookies
 	window.onload = function() {
 		var wss = "wss://dm.bzmb.eu";
+        var ws;
 		var toId;
 		var fromId;
 		var privId;
@@ -90,7 +91,7 @@
 				// Add active class to target element
 		        dmChatroomPage.classList.add('active');
 		        dmChatButtonsPage.classList.remove('active');
-		        
+
 				// setup your id for others
 				toId = dataToId;
 				console.log("clicked toId: " + toId);
@@ -224,7 +225,7 @@
 			return parsedGetter;
 		};
 
-        function establishConnection() {
+        function establishConnection(wss) {
             ws = new WebSocket(wss);
 
     		// When websocket is open
@@ -261,7 +262,7 @@
     		ws.onmessage = function(msg) {
     			var data = JSON.parse(msg.data);
 
-    			// - For loading userlist 
+    			// - For loading userlist
     			// - Check if it is an array; for userlist, which is whole list of users
     			switch (data.type) {
     				case "userlist":
