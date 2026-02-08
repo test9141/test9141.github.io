@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    dm();
+    //dm();
     buttons();
     backgrounds();
     gifAutoload();
