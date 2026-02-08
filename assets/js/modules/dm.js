@@ -75,7 +75,7 @@
 			var usersEle = document.getElementById('dm-chatroom-btns');
 			var createUserListEle = document.createElement("li");
 			createUserListEle.innerHTML = nobodyTextEle;
-			userEle.classList.add("usernameBtns");
+			usersEle.classList.add("usernameBtns");
 			usersEle.appendChild(createUserListEle);
 			//console.log("no userlist");
 		}
