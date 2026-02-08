@@ -293,7 +293,7 @@
 				// Set default username
 				case "nickname":
 					yourNickname = data.nickname;
-					var usernameInputEle = document.getElementById('username');
+					var usernameInputEle = document.getElementById('dm-nme');
 					usernameInputEle.value = yourNickname;
 					saveCookie("name=", data.nickname);
 					break;
