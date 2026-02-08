@@ -1,11 +1,11 @@
 'use strict';
 
 function chat(wsName) {
-	var msg1 = document.getElementById("msg2"); // Message input field
-	var nme1 = document.getElementById("nme2"); // Username input field
-	var log1 = document.getElementById("log2"); // Log container for messages
-	var pick1 = document.getElementById("colorpicker2"); // Username's Colorpicker
-	var message1 = document.getElementById("message2");
+	var msg1 = document.getElementById("msg"); // Message input field
+	var nme1 = document.getElementById("nme"); // Username input field
+	var log1 = document.getElementById("log"); // Log container for messages
+	var pick1 = document.getElementById("colorpicker"); // Username's Colorpicker
+	var message1 = document.getElementById("message");
 	let checkClose;
 	let conn;
 

@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+	<head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -7,7 +8,7 @@
         <!-- <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 1025px)" 
             href="assets/css/desktop.css"> -->
         <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/desktop.css">
-        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/game.css">
+		<link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/game.css">
         <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/draw.css">
         <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/chat.css">
         <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/block.css">
@@ -20,6 +21,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/tabler-icons.css">
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
         <script src="assets/js/modules.js"></script>
+        <script src="assets/js/modules/dm.js"></script>
         <script src="assets/js/modules/background.js"></script>
         <script src="assets/js/modules/buttons.js"></script>
         <script src="assets/js/modules/custom-feature.js"></script>
@@ -187,13 +189,13 @@
 					<div id="chatroom" class="chatroom">
                         <div id="chat" class="chat" style="position: absolute;top: 0px;left: 0px;width: 100%;">
                             <form id="message" style="display: grid;grid-template-areas:&quot;input button&quot;;grid-template-columns: 1fr auto;grid-template-rows: 48px;height: 48px;">
-                                <input type="text" id="msg2" placeholder="Message" size="58">
-                                <i type="submit" id="send2" value="Send" style="background-color: transparent;color: white;padding: 1rem;width: 53.33px; font-weight: 600; padding: 0.50rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-send"></i>
+                                <input type="text" id="msg" placeholder="Message" size="58">
+                                <i type="submit" id="send" value="Send" style="background-color: transparent;color: white;padding: 1rem;width: 53.33px; font-weight: 600; padding: 0.50rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-send"></i>
                             </form>
                             <div id="log"></div>
 							<form id="name" style="display: grid;grid-template-areas:&quot;back input button&quot;;grid-template-columns: auto 1fr auto;grid-template-rows: 48px;height: 48px;">
 								<div id="backarrow" style="padding: 0.5rem; font-size: 28px;" class="ti ti-logout backarrow hoverButton"></div>
-                                <input type="text" id="nme2" placeholder="Name" size="58">
+                                <input type="text" id="nme" placeholder="Name" size="58">
                                 <div id="colorpicker" style="color: rgb(151, 190, 136); width: 53.33px; font-weight: 600; padding: 0.5rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-palette"></div>
                             </form>
                         </div>
@@ -368,6 +370,50 @@
                     </div>
                 </div>
                 <!-- end -->
+
+				<!-- dm page -->
+				<div id="dm-page" class="dm-page" style="position: absolute;">
+					<div id="dm-chatroom-btns-page" style="width: 100%; position: absolute; height: 100%;" class="dm-chatroom-btns-page active">
+						<div style="padding: 1.5rem 1rem 0.5rem 1rem;list-style: none; left: 0px;" id="dm-chatroom-btns" class="dm-chatroom-btns"></div>
+					</div>
+					<div id="dm-chatroom" class="dm-chatroom">
+                        <div id="dm-chat" class="dm-chat" style="position: absolute;top: 0px;left: 0px;width: 100%;">
+                            <form id="dm-message" style="display: grid;grid-template-areas:&quot;input button&quot;;grid-template-columns: 1fr auto;grid-template-rows: 48px;height: 48px;">
+                                <input type="text" id="dm-msg" placeholder="Message" size="58">
+                                <i type="submit" id="dm-send" value="Send" style="background-color: transparent;color: white;padding: 1rem;width: 53.33px; font-weight: 600; padding: 0.50rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-send"></i>
+                            </form>
+                            <div id="dm-log"></div>
+							<form id="dm-name" style="display: grid;grid-template-areas:&quot;back input button&quot;;grid-template-columns: auto 1fr auto;grid-template-rows: 48px;height: 48px;">
+								<div id="dm-backarrow" style="padding: 0.5rem; font-size: 28px;" class="ti ti-logout dm-backarrow hoverButton"></div>
+                                <input type="text" id="dm-nme" placeholder="Name" size="58">
+                                <div id="dm-colorpicker" style="color: rgb(151, 190, 136); width: 53.33px; font-weight: 600; padding: 0.5rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-palette"></div>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+				<!-- end -->
+
+				<!-- voicechat page -->
+				<div id="voicechat-page" class="voicechat-page" style="position: absolute;">
+					<div id="voice-chatroom-btns-page3" style="width: 100%; position: absolute; height: 100%;" class="voice-chatroom-btns-page active">
+						<div style="padding: 1.5rem 1rem 0.5rem 1rem;list-style: none; left: 0px;" id="voice-chatroom-btns" class="voice-chatroom-btns"></div>
+					</div>
+					<div id="voice-chatroom" class="voice-chatroom">
+                        <div id="voice-chat" class="voice-chat" style="position: absolute;top: 0px;left: 0px;width: 100%;">
+                            <form id="voice-message" style="display: grid;grid-template-areas:&quot;input button&quot;;grid-template-columns: 1fr auto;grid-template-rows: 48px;height: 48px;">
+                                <input type="text" id="voice-msg" placeholder="Message" size="58">
+                                <i type="submit" id="voice-send" value="Send" style="background-color: transparent;color: white;padding: 1rem;width: 53.33px; font-weight: 600; padding: 0.50rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-send"></i>
+                            </form>
+                            <div id="voice-log"></div>
+							<form id="voice-name" style="display: grid;grid-template-areas:&quot;back input button&quot;;grid-template-columns: auto 1fr auto;grid-template-rows: 48px;height: 48px;">
+								<div id="voice-backarrow" style="padding: 0.5rem; font-size: 28px;" class="ti ti-logout voice-backarrow hoverButton"></div>
+                                <input type="text" id="voice-nme" placeholder="Name" size="58">
+                                <div id="voice-colorpicker" style="color: rgb(151, 190, 136); width: 53.33px; font-weight: 600; padding: 0.5rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-palette"></div>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+				<!-- end -->
             </div>            
         </div>
         

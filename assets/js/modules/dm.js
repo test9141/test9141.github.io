@@ -1,7 +1,7 @@
 'use strict';
 
-function dm() {
-
+	console.log("success");
+	
 	// - Doing any testing or debugging requires TWO browsers, 
 	// because otherwise they share the same localstorage and cookies
 	window.onload = function() {
@@ -13,9 +13,11 @@ function dm() {
 		var yourNickname = "";
 		var users = 0;
 		var debug;
-		var usernameInputEle = document.getElementById('username');
-		var chatForm = document.getElementById("chat-form");
-		var sendButton = document.getElementById("send");
+		var usernameInputEle = document.getElementById('dm-nme');
+		var chatForm = document.getElementById("dm-message");
+		var sendButton = document.getElementById("dm-send");
+		var dmChatButtonsPage = document.getElementById('dm-chatroom-btns-page');
+		var dmChatroomPage = document.getElementById('dm-chatroom');
 
 		/*                              */
 		/* Functions with HTML involved */
@@ -28,6 +30,13 @@ function dm() {
 			console.log("yourNickname: " + yourNickname);
 			saveCookie("name=", yourNickname);
 		});
+		// This is to go to the chatroom buttons
+		const logout = document.getElementById(`dm-backarrow`);
+		logout.addEventListener('click', function() {
+			dmChatButtonsPage.classList.add('active');
+			dmChatroomPage.classList.remove('active');
+			// TODO: Exit out of chat(), below here
+		})
 		// Message text box event listener when press enter
 		chatForm.addEventListener('keypress', function (e) {
 			if (e.key === 'Enter') {
@@ -47,7 +56,7 @@ function dm() {
 				console.warn("null - toId: " + toId + " otherId: " + otherId);
 			} else {
 				console.warn("message passed");
-				var messagesEle = document.getElementById('messages');
+				var messagesEle = document.getElementById('dm-log');
 				var messagesListEle = document.createElement("li");
 				messagesListEle.textContent = nickname + ": " + message;
 				messagesListEle.id = "textmsg";
@@ -57,7 +66,7 @@ function dm() {
 		// Show a "no users" message when there are no users
 		function appendNoUserlist() {
 			var nobodyTextEle = "<h3>" + "nobody is here" + "</h3>";
-			var usersEle = document.getElementById('users');
+			var usersEle = document.getElementById('dm-chatroom-btns');
 			var createUserListEle = document.createElement("li");
 			createUserListEle.innerHTML = nobodyTextEle;
 			usersEle.appendChild(createUserListEle);
@@ -76,6 +85,10 @@ function dm() {
 			var createUserListEle = document.createElement("li");
 			//console.log("event listener: " + dataToId);
 			createUserListEle.addEventListener("click", () => {
+				// Add active class to target element
+		        dmChatroomPage.classList.add('active');
+		        dmChatButtonsPage.classList.remove('active');
+		        
 				// setup your id for others
 				toId = dataToId;
 				console.log("clicked toId: " + toId);
@@ -97,10 +110,11 @@ function dm() {
 				}
 			});
 			//console.log("end");
-			var usersEle = document.getElementById('users');
+			var usersEle = document.getElementById('dm-chatroom-btns');
 			createUserListEle.textContent = nickname;
 			createUserListEle.style = "cursor: pointer;";
 			createUserListEle.id = dataToId;
+			createUserListEle.className = "hoverButton";
 			usersEle.appendChild(createUserListEle);
 			//console.log("adding");
 		}
@@ -215,19 +229,19 @@ function dm() {
 			// Check if username is already stored in a cookie
 			// And also setup things with username, fromId and privId
 			if (document.cookie) {
-				var usernameInputEle = document.getElementById('username');
+				var usernameInputEle = document.getElementById('dm-nme');
 				//console.log("Cookie name: " + getCookie("name"));
 				usernameInputEle.setAttribute('value', getCookie("name"));
 				yourNickname = getCookie("name");
 				fromId = getCookie("fromId");
 				privId = getCookie("privId");
-				ws.send(JSON.stringify( {type: "userlist"} ));
 				ws.send(JSON.stringify({
 							type: "cookie", 
 							fromId: fromId, 
 							privId: privId, 
 							nickname: yourNickname
 						}));
+				ws.send(JSON.stringify( {type: "userlist"} ));
 			} else {
 				//console.log("testing");
 				ws.send(JSON.stringify( {type: "uuid"} ));
@@ -341,7 +355,6 @@ function dm() {
 			console.log("Connection closed");
 		};
 	};
-};
 
 	/*'use strict';
 

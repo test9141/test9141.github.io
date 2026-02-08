@@ -7,7 +7,7 @@ function buttons() {
                       'block-page-btn', 'block-page', 
                       'music-page-btn', 'music-page', 
                       'dm-page-btn', 'dm-page', 
-                      'voicechat-page-btn', 'voice-chat',
+                      'voicechat-page-btn', 'voicechat-page',
                       'background-page-btn', 'background-page',
                       'fullscreen-btn'];
   const elements = {};
