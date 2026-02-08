@@ -5,7 +5,7 @@
 	// - Doing any testing or debugging requires TWO browsers, 
 	// because otherwise they share the same localstorage and cookies
 	window.onload = function() {
-		var ws = new WebSocket("wss://dm.bzmb.eu");
+		var ws = "wss://dm.bzmb.eu";
 		var toId;
 		var fromId;
 		var privId;
@@ -62,7 +62,7 @@
 				var messagesListEle = document.createElement("li");
 				messagesListEle.textContent = nickname + ": " + message;
 				messagesListEle.id = "textmsg";
-				messagesEle.appendChild(messagesListEle);
+				messagesEle.prepend(messagesListEle);
 			};
 		}
 		// Show a "no users" message when there are no users
@@ -224,138 +224,155 @@
 			return parsedGetter;
 		};
 
-		// When websocket is open
-		ws.onopen = function(e) {
-			//console.log('Connection to server opened');
+		var ws = new WebSocket("wss://dm.bzmb.eu");
 
-			// Check if username is already stored in a cookie
-			// And also setup things with username, fromId and privId
-			if (document.cookie) {
-				var usernameInputEle = document.getElementById('dm-nme');
-				//console.log("Cookie name: " + getCookie("name"));
-				usernameInputEle.setAttribute('value', getCookie("name"));
-				yourNickname = getCookie("name");
-				fromId = getCookie("fromId");
-				privId = getCookie("privId");
-				ws.send(JSON.stringify({
-							type: "cookie", 
-							fromId: fromId, 
-							privId: privId, 
-							nickname: yourNickname
-						}));
-				ws.send(JSON.stringify( {type: "userlist"} ));
-			} else {
-				//console.log("testing");
-				ws.send(JSON.stringify( {type: "uuid"} ));
-				ws.send(JSON.stringify( {type: "privUuid"} ));
-				ws.send(JSON.stringify( {type: "nickname"} ));
-				ws.send(JSON.stringify( {type: "userlist"} ));
-				ws.send(JSON.stringify( {type: "add"} ));
-			};
-		};
+        function establishConnection(ws) {
+            ws = new WebSocket(ws);
 
-		// When websocket sends you a message
-		ws.onmessage = function(msg) {
-			var data = JSON.parse(msg.data);
+    		// When websocket is open
+    		ws.onopen = function(e) {
+    			//console.log('Connection to server opened');
 
-			// - For loading userlist 
-			// - Check if it is an array; for userlist, which is whole list of users
-			switch (data.type) {
-				case "userlist":
-					console.log("test");
-					// if more than one object exists in array
-					if (Object.keys(data.arrayWithoutFromClient).length > 0) {
-						console.log("test2");
-						if (data.arrayWithoutFromClient[0].type == "userlist") {
-							console.log("test3");
-							for (let i = 0; i < Object.keys(data.arrayWithoutFromClient).length; i++) {
-								console.log("test4");
-								users += 1;
-								let obj = data.arrayWithoutFromClient[i];
-								addUser(obj.nickname, obj.toId, fromId);
-								//console.log("ID: [%s] = %s", obj.toId, obj.nickname);
-							};
-						};
-					} else if (Object.keys(data.arrayWithoutFromClient).length == 0) {
-						//console.log("no userlist");
-						appendNoUserlist();
-					};
-					break;
-				// At start, get your own public uuid from server
-				case "uuid":
-					fromId = data.fromId;
-					saveCookie("fromId=", data.fromId);
-					break;
-				// At start, get your own private uuid from server
-				case "privUuid":
-					privId = data.privId;
-					saveCookie("privId=", data.privId);
-					break;
-				// Set default username
-				case "nickname":
-					yourNickname = data.nickname;
-					var usernameInputEle = document.getElementById('dm-nme');
-					usernameInputEle.value = yourNickname;
-					saveCookie("name=", data.nickname);
-					break;
-				// Add single user
-				case "adduser":
-					users += 1;
-					addUser(data.nickname, data.toId, fromId);
-					// Remove "nobody is here" text if one user exists
-					if (users == 1) {
-						deleteNoUserlist();
-					}
-					break;
-				// Delete single user
-				case "deluser":
-					users -= 1;
-					delUser(data.nickname, data.toId);
-					// Add "nobody is here" text
-					if (users == 0) {
-						appendNoUserlist();
-					}
-					break;
-				// Load a message
-				case "message":
-					// Need to differentiate when they send message to you,
-					// so it will show message and store in the right array
-					if (data.toId == fromId) {
-						appendMessage(data.fromId, data.nickname, data.message);
-						saveStorage(data.fromId, data.message, data.nickname);
-					} else {
-						appendMessage(data.toId, data.nickname, data.message);
-						saveStorage(data.toId, data.message, data.nickname);
-					}
-					console.log("type: " + data.type + " fromId: " + data.fromId + " nickname: " + data.nickname + " message " + data.message + " toId " + data.toId);
-					break;
-				// Change other person's username to reflect change
-				case "nicknameChange":
-					// Change element with class=data.toId innerHTML to data.nickname
-					changeToNickname(data.nickname, data.toId);
-					break;
-				// - Log when you get websocket closed from server
-				// because of you being already connected
-				case "alreadyConnected":
-					appendMessage("client", "Client", "You are already connected on another browser/tab");
-					break;
-				case "notAvailable":
-					appendMessage("client", "Client", "This user is not available right now");
-					break;
-				case "userDeleted":
-					appendMessage("client", "Client", "This user was either deleted or never existed");
-					break;
-				case "notSelected":
-					appendMessage("client", "Client", "You haven't clicked a user yet");
-					break
-			};
-		};
+    			// Check if username is already stored in a cookie
+    			// And also setup things with username, fromId and privId
+    			if (document.cookie) {
+    				var usernameInputEle = document.getElementById('dm-nme');
+    				//console.log("Cookie name: " + getCookie("name"));
+    				usernameInputEle.setAttribute('value', getCookie("name"));
+    				yourNickname = getCookie("name");
+    				fromId = getCookie("fromId");
+    				privId = getCookie("privId");
+    				ws.send(JSON.stringify({
+    							type: "cookie", 
+    							fromId: fromId, 
+    							privId: privId, 
+    							nickname: yourNickname
+    						}));
+    				ws.send(JSON.stringify( {type: "userlist"} ));
+    			} else {
+    				//console.log("testing");
+    				ws.send(JSON.stringify( {type: "uuid"} ));
+    				ws.send(JSON.stringify( {type: "privUuid"} ));
+    				ws.send(JSON.stringify( {type: "nickname"} ));
+    				ws.send(JSON.stringify( {type: "userlist"} ));
+    				ws.send(JSON.stringify( {type: "add"} ));
+    			};
+    		};
 
-		// When websocket closes
-		ws.onclose = function(e) {
-			appendMessage("client", "Client", "Connection closed");
-			console.log("Connection closed");
-		};
+    		// When websocket sends you a message
+    		ws.onmessage = function(msg) {
+    			var data = JSON.parse(msg.data);
+
+    			// - For loading userlist 
+    			// - Check if it is an array; for userlist, which is whole list of users
+    			switch (data.type) {
+    				case "userlist":
+    					console.log("test");
+    					// if more than one object exists in array
+    					if (Object.keys(data.arrayWithoutFromClient).length > 0) {
+    						console.log("test2");
+    						if (data.arrayWithoutFromClient[0].type == "userlist") {
+    							console.log("test3");
+    							for (let i = 0; i < Object.keys(data.arrayWithoutFromClient).length; i++) {
+    								console.log("test4");
+    								users += 1;
+    								let obj = data.arrayWithoutFromClient[i];
+    								addUser(obj.nickname, obj.toId, fromId);
+    								//console.log("ID: [%s] = %s", obj.toId, obj.nickname);
+    							};
+    						};
+    					} else if (Object.keys(data.arrayWithoutFromClient).length == 0) {
+    						//console.log("no userlist");
+    						appendNoUserlist();
+    					};
+    					break;
+    				// At start, get your own public uuid from server
+    				case "uuid":
+    					fromId = data.fromId;
+    					saveCookie("fromId=", data.fromId);
+    					break;
+    				// At start, get your own private uuid from server
+    				case "privUuid":
+    					privId = data.privId;
+    					saveCookie("privId=", data.privId);
+    					break;
+    				// Set default username
+    				case "nickname":
+    					yourNickname = data.nickname;
+    					var usernameInputEle = document.getElementById('dm-nme');
+    					usernameInputEle.value = yourNickname;
+    					saveCookie("name=", data.nickname);
+    					break;
+    				// Add single user
+    				case "adduser":
+    					users += 1;
+    					addUser(data.nickname, data.toId, fromId);
+    					// Remove "nobody is here" text if one user exists
+    					if (users == 1) {
+    						deleteNoUserlist();
+    					}
+    					break;
+    				// Delete single user
+    				case "deluser":
+    					users -= 1;
+    					delUser(data.nickname, data.toId);
+    					// Add "nobody is here" text
+    					if (users == 0) {
+    						appendNoUserlist();
+    					}
+    					break;
+    				// Load a message
+    				case "message":
+    					// Need to differentiate when they send message to you,
+    					// so it will show message and store in the right array
+    					if (data.toId == fromId) {
+    						appendMessage(data.fromId, data.nickname, data.message);
+    						saveStorage(data.fromId, data.message, data.nickname);
+    					} else {
+    						appendMessage(data.toId, data.nickname, data.message);
+    						saveStorage(data.toId, data.message, data.nickname);
+    					}
+    					console.log("type: " + data.type + " fromId: " + data.fromId + " nickname: " + data.nickname + " message " + data.message + " toId " + data.toId);
+    					break;
+    				// Change other person's username to reflect change
+    				case "nicknameChange":
+    					// Change element with class=data.toId innerHTML to data.nickname
+    					changeToNickname(data.nickname, data.toId);
+    					break;
+    				// - Log when you get websocket closed from server
+    				// because of you being already connected
+    				case "alreadyConnected":
+    					appendMessage("client", "Client", "You are already connected on another browser/tab");
+    					break;
+    				case "notAvailable":
+    					appendMessage("client", "Client", "This user is not available right now");
+    					break;
+    				case "userDeleted":
+    					appendMessage("client", "Client", "This user was either deleted or never existed");
+    					break;
+    				case "notSelected":
+    					appendMessage("client", "Client", "You haven't clicked a user yet");
+    					break
+    			};
+    		};
+
+    		// When websocket closes
+    		ws.onclose = function(e) {
+    			appendMessage("client", "Client", "Connection closed, reconnecting...");
+				console.log("%c Connection closed, reconnecting " + wsName, "color: red");
+				setTimeout(reconnect, 2000);
+    		};
+        };
+
+		// Function to reconnect
+		function reconnect() {
+			console.log('Reconnecting...');
+			establishConnection(ws); // Attempt to reconnect
+			var reconnectDelay = 2000; // Increase delay for next attempt
+		}
+
+		// Establish the initial connection
+		establishConnection(wsName);
 	};
 
 	/*'use strict';
