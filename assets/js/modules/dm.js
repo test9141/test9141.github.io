@@ -16,6 +16,7 @@
 		var usernameInputEle = document.getElementById('dm-nme');
         var messageInputEle = document.getElementById('dm-msg');
 		var chatForm = document.getElementById("dm-message");
+        var chatUserForm = document.getElementById("dm-name");
 		var sendButton = document.getElementById("dm-send");
 		var dmChatButtonsPage = document.getElementById('dm-chatroom-btns-page');
 		var dmChatroomPage = document.getElementById('dm-chatroom');
