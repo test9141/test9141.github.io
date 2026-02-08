@@ -14,6 +14,7 @@
 		var users = 0;
 		var debug;
 		var usernameInputEle = document.getElementById('dm-nme');
+        var messageInputEle = document.getElementById('dm-msg');
 		var chatForm = document.getElementById("dm-message");
 		var sendButton = document.getElementById("dm-send");
 		var dmChatButtonsPage = document.getElementById('dm-chatroom-btns-page');
@@ -136,7 +137,7 @@
 		// When you send message in message box, send your information and message
 		function sendMessage() {
 			try {
-				var messageInputEle = document.getElementById('message');
+				var messageInputEle = document.getElementById('dm-msg');
 				console.log(messageInputEle.value);
 				if(ws.readyState === WebSocket.OPEN) {
 					ws.send(JSON.stringify({
