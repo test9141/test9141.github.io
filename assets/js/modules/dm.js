@@ -126,7 +126,8 @@
 			//console.log("adding");
 		}
 		function clearUsers() {
-			document.querySelectorAll(".usernameBtns");
+			var userClear = document.querySelectorAll(".usernameBtns");
+			userClear.remove();
 		}
 		// Delete a singular user when they left on the left pane
 		function delUser(nickname, dataToId) {
