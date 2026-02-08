@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     backgrounds();
     gifAutoload();
     customFeature();
-    chat();
+    //chat();
     draw();
     perf();
     chatroom();
