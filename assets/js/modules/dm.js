@@ -75,6 +75,7 @@
 			var usersEle = document.getElementById('dm-chatroom-btns');
 			var createUserListEle = document.createElement("li");
 			createUserListEle.innerHTML = nobodyTextEle;
+			userEle.classList.add("usernameBtns");
 			usersEle.appendChild(createUserListEle);
 			//console.log("no userlist");
 		}
@@ -120,9 +121,12 @@
 			createUserListEle.textContent = nickname;
 			createUserListEle.style = "cursor: pointer;";
 			createUserListEle.id = dataToId;
-			createUserListEle.className = "hoverButton";
+			createUserListEle.classList.add("hoverButton", "usernameBtns");
 			usersEle.appendChild(createUserListEle);
 			//console.log("adding");
+		}
+		function clearUsers() {
+			document.querySelectorAll(".usernameBtns");
 		}
 		// Delete a singular user when they left on the left pane
 		function delUser(nickname, dataToId) {
@@ -230,6 +234,8 @@
 
         function establishConnection() {
             ws = new WebSocket(wss);
+
+			clearUsers();
 
     		// When websocket is open
     		ws.onopen = function(e) {
