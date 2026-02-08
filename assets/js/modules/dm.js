@@ -225,7 +225,7 @@
 			return parsedGetter;
 		};
 
-        function establishConnection(wss) {
+        function establishConnection() {
             ws = new WebSocket(wss);
 
     		// When websocket is open
