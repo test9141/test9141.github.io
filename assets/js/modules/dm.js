@@ -75,7 +75,7 @@
 			var usersEle = document.getElementById('dm-chatroom-btns');
 			var createUserListEle = document.createElement("li");
 			createUserListEle.innerHTML = nobodyTextEle;
-			usersEle.classList.add("usernameBtns");
+			usersEle.classList.add("noUserlist");
 			usersEle.appendChild(createUserListEle);
 			//console.log("no userlist");
 		}
@@ -128,6 +128,8 @@
 		function clearUsers() {
 			var userClear = document.querySelectorAll(".usernameBtns");
 			userClear.forEach(e => e.remove());
+			var userClear = document.getElementByClassName(".noUserlist");
+			userClear.remove;
 		}
 		// Delete a singular user when they left on the left pane
 		function delUser(nickname, dataToId) {
@@ -317,8 +319,11 @@
     					users += 1;
     					addUser(data.nickname, data.toId, fromId);
     					// Remove "nobody is here" text if one user exists
-    					if (users == 1) {
-    						deleteNoUserlist();
+    					if (users > 1 || users == 1) {
+							var checkIfUserlist = document.getElementByClassName("noUserlist")
+							if (checkIfUserlist) {
+	    						deleteNoUserlist();
+							};
     					}
     					break;
     				// Delete single user
