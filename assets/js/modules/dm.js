@@ -1,8 +1,8 @@
 'use strict';
 
 	console.log("success");
-	
-	// - Doing any testing or debugging requires TWO browsers, 
+
+	// - Doing any testing or debugging requires TWO browsers,
 	// because otherwise they share the same localstorage and cookies
 	window.onload = function() {
 		var wss = "wss://dm.bzmb.eu";
@@ -372,20 +372,3 @@
 		// Establish the initial connection
 		establishConnection(wss);
 	};
-
-	/*'use strict';
-
-	function music() {
-	  const chatButtonsPage = document.getElementById('chatroom-btns-page2');
-	  const chatroomPage = document.getElementById('chatroom2');
-
-	  // This is to go to the chatroom buttons
-	  function chatroomButtonsPage() {
-	    const logout = document.getElementById(`backarrow2`);
-	    logout.addEventListener('click', function() {
-	      chatButtonsPage.classList.add('active');
-	      chatroomPage.classList.remove('active');
-	      // TODO: Exit out of chat(), below here
-	    })
-	  }
-	};*/
