@@ -5,7 +5,7 @@
 	// - Doing any testing or debugging requires TWO browsers, 
 	// because otherwise they share the same localstorage and cookies
 	window.onload = function() {
-		var ws = "wss://dm.bzmb.eu";
+		var wss = "wss://dm.bzmb.eu";
 		var toId;
 		var fromId;
 		var privId;
@@ -224,10 +224,8 @@
 			return parsedGetter;
 		};
 
-		var ws = new WebSocket("wss://dm.bzmb.eu");
-
-        function establishConnection(ws) {
-            ws = new WebSocket(ws);
+        function establishConnection() {
+            ws = new WebSocket(wss);
 
     		// When websocket is open
     		ws.onopen = function(e) {
@@ -243,9 +241,9 @@
     				fromId = getCookie("fromId");
     				privId = getCookie("privId");
     				ws.send(JSON.stringify({
-    							type: "cookie", 
-    							fromId: fromId, 
-    							privId: privId, 
+    							type: "cookie",
+    							fromId: fromId,
+    							privId: privId,
     							nickname: yourNickname
     						}));
     				ws.send(JSON.stringify( {type: "userlist"} ));
@@ -367,12 +365,12 @@
 		// Function to reconnect
 		function reconnect() {
 			console.log('Reconnecting...');
-			establishConnection(ws); // Attempt to reconnect
+			establishConnection(wss); // Attempt to reconnect
 			var reconnectDelay = 2000; // Increase delay for next attempt
 		}
 
 		// Establish the initial connection
-		establishConnection(ws);
+		establishConnection(wss);
 	};
 
 	/*'use strict';
