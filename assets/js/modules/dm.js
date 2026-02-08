@@ -60,10 +60,13 @@
 			} else {
 				console.warn("message passed");
 				var messagesEle = document.getElementById('dm-log');
-				var messagesListEle = document.createElement("li");
+				var boxEle = document.createElement("div");
+				boxEle.id = "dm-box";
+				var messagesListEle = document.createElement("div");
 				messagesListEle.textContent = nickname + ": " + message;
 				messagesListEle.id = "textmsg";
-				messagesEle.prepend(messagesListEle);
+				messagesEle.prepend(boxEle);
+				boxEle.appendChild(messagesListEle);
 			};
 		}
 		// Show a "no users" message when there are no users
