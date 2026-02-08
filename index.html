@@ -1,11 +1,378 @@
----
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&amp;display=swap" media="all">
+        <!-- <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 1025px)" 
+            href="assets/css/desktop.css"> -->
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/desktop.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/game.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/draw.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/chat.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/block.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/music.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/background.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/dm.css">
+        <link rel="stylesheet" type="text/css" media="" href="assets/css/desktop/voicechat.css">
+        <!-- <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 1024px)" 
+            href="assets/css/mobile.css"> -->
+        <link rel="stylesheet" type="text/css" href="assets/css/tabler-icons.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <script src="assets/js/modules.js"></script>
+        <script src="assets/js/modules/background.js"></script>
+        <script src="assets/js/modules/buttons.js"></script>
+        <script src="assets/js/modules/custom-feature.js"></script>
+        <script src="assets/js/modules/gif-autoload.js"></script>
+        <script src="assets/js/modules/chat.js"></script>
+        <script src="assets/js/modules/chatroom.js"></script>
+        <script src="assets/js/modules/draw.js"></script>
+        <script src="assets/js/modules/music.js"></script>
+        <script src="assets/js/modules/performance.js"></script>
+        <link href="assets/css/style.css" rel="stylesheet">
 
-layout: home
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: /page/:num/
-  title: "Page :num"
----
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="anarchychats.com">
+        <title>𝗔𝗡𝗔𝗥𝗖𝗛𝗬 𝗖𝗛𝗔𝗧</title>
+        <meta name="description" content="Anarchy Chat, 
+            Made by Lorenzino, Mr. iogames and more in TKR, 
+            is a mod for the chatbox on the website iogames.fun. 
+            this turns it into one big chat site! including: 
+            Enchanced chat, Animated Backgrounds, an alternate chat, and more!">
+        <meta property="og:title" content="Anarchy chat - A chat and game site with minimal rules">
+        <meta property="og:description" content="Anarchy Chat, Made by Lorenzino, 
+            Mr. iogames and more in TKR, is a mod for the chatbox on the website 
+            iogames.fun. this turns it into one big chat site! including: 
+            Enchanced chat, Animated Backgrounds, an alternate chat, and more!">
+        <meta property="og:url" content="https://anarchychats.com/">
+        <link rel="canonical" href="https://anarchychats.com/">
+    </head>
+    <body><video id="video-background" autoplay="" loop="" style="opacity: 0.6;"></video>
+        
+        
+        <div class="main" id="gridLayer">
+        <nav class="blur" id="navbar" style="">
+            <div class="logo desktop opac" id="logo-style">
+                <div class="logo-top menu list" style="grid-area: logo-top;display: flex;align-items: flex-end; padding-left: 0.50rem;">
+                    
+        <a href="index.html">
+
+
+            		<span class="anarchychats titleName" style="color: white;">AnarchyChats</span><span class="com titleName" style="color: #ff9999;">.com</span>
+                    </a>
+                </div>
+                <div class="logo-below" style="grid-area: logo-bottom;display: flex;align-items: flex-start; padding-left: 0.50rem;">
+                    <span class="subtext subTitleName" style="color: grey;">By Lorenzino, mr.iogames, and more</span>
+                </div>
+            </div>
+            <div class="logo-image" id="logo-image">
+                
+        <img src="assets/images/ARCH.webp" class="logotkr" style="opacity: 100%;">
+
+
+            </div>
+        </nav>
+            
+            <div class="sidebar blur" style="grid-area: sidebar; z-index: 3; overflow: scroll;">
+                <div class="button list opac" style="z-index: 0;height: 50px;
+                    display: flex;flex-direction: column;align-items: center;margin: 0;padding: 0;
+                    white-space: nowrap;">
+                    <a id="game-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-device-gamepad" style="font-weight: 600;
+                            padding: 0.50rem; font-size:28px;font-style: normal; display: block;"></i>
+                    </a>
+                    <a id="draw-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-pencil" style="font-weight: 600;
+                            padding: 0.50rem; font-size:28px;font-style: normal; display: block;"></i>
+                    </a>
+                    <a id="chat-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-message" style="font-weight: 500;
+                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
+                    </a>
+                    <a id="block-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-forbid-2" style="font-weight: 600; 
+                            padding: 0.50rem; font-size: 28px; font-style: normal; display:block;"></i>
+                    </a>
+                    <a id="music-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-music" style="font-weight: 600; 
+                            padding: 0.50rem; font-size: 28px; font-style: normal; display:block;"></i>
+                    </a>
+                    <a id="background-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-polaroid" style="font-weight: 500;
+                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
+                    </a>
+                    <a id="dm-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-messages" style="font-weight: 500;
+                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
+                    </a>
+                    <a id="voicechat-page-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-microphone" style="font-weight: 500;
+                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
+                    </a>
+                    <a id="fullscreen-btn" class="item nav-button desktop-button">
+                        <i class="ti ti-arrows-maximize" style="font-weight: 500;
+                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
+                    </a>
+                </div>                
+            </div>
+            
+            <div class="mid" style="grid-area: mid; z-index: 0;">
+                <!-- background page -->
+                <div id="background-page" class="background-page" style="position: absolute;">
+                    <div class="sidebars">
+                        <div class="header">Anarchy Chat</div>
+                        <div class="backgroundstyles">
+                            <li>
+                                <p class="b1" id="hoverButton">Background 1</p>
+                            </li>
+                            <li>
+                                <p class="b2" id="hoverButton">Background 2</p>
+                            </li>
+                            <li>
+                                <p class="b3" id="hoverButton">Background 3</p>
+                            </li>
+                            <li>
+                                <p class="b4" id="hoverButton">Background 4</p>
+                            </li>
+                            <li>
+                                <p class="b5" id="hoverButton">Background 5</p>
+                            </li>
+                            <li>
+                                <p class="b6" id="hoverButton">Background 6</p>
+                            </li>
+                            <li>
+                                <p class="rem" id="hoverButton">No Background</p>
+                            </li>
+                            <li>
+                                <p class="cust">
+                                    <textarea id="url-background" placeholder="Background URL" style="color: white; background-color: transparent;
+                            			padding: 0px;"></textarea>
+                                </p>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+
+                <!-- block page -->
+                <div id="block-page" class="block-page" style="position: absolute;">
+                    <div style="padding: 1.5rem 1rem 0.5rem 1rem;">
+                        <div class="sidebars blocksidebar">
+                            <div class="item">
+                                <input type="color" id="usernameColorPicker" class="mobileblock colorPickerClass">
+                            </div>
+                            <div class="item">
+                                <div class="mobileblock blockedUsersListClass all">Blocked Users:</div>
+                            </div>
+                            <div class="item">
+                                <input type="text" placeholder="Block user" class="mobileblock blockInputClass" style="width: 200px;">
+                            </div>
+                            <div class="item">
+                                <input type="text" placeholder="Unblock user" class="mobileblock unblockInputClass" style="width: 200px;">
+                            </div>
+                            <div class="item">
+                                <button class="mobileblock unblockAllButtonClass">Unblock All</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+
+                <!-- chat page -->
+                <div id="chat-page" class="chat-page active" style="position: absolute;">
+					<div id="chatroom-btns-page" style="width: 100%; position: absolute; height: 100%;" class="chatroom-btns-page active">
+						<div style="padding: 1.5rem 1rem 0.5rem 1rem;list-style: none; left: 0px;" id="chatroom-btns" class="chatroom-btns"></div>
+					</div>
+					<div id="chatroom" class="chatroom">
+                        <div id="chat" class="chat" style="position: absolute;top: 0px;left: 0px;width: 100%;">
+                            <form id="message" style="display: grid;grid-template-areas:&quot;input button&quot;;grid-template-columns: 1fr auto;grid-template-rows: 48px;height: 48px;">
+                                <input type="text" id="msg2" placeholder="Message" size="58">
+                                <i type="submit" id="send2" value="Send" style="background-color: transparent;color: white;padding: 1rem;width: 53.33px; font-weight: 600; padding: 0.50rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-send"></i>
+                            </form>
+                            <div id="log"></div>
+							<form id="name" style="display: grid;grid-template-areas:&quot;back input button&quot;;grid-template-columns: auto 1fr auto;grid-template-rows: 48px;height: 48px;">
+								<div id="backarrow" style="padding: 0.5rem; font-size: 28px;" class="ti ti-logout backarrow hoverButton"></div>
+                                <input type="text" id="nme2" placeholder="Name" size="58">
+                                <div id="colorpicker" style="color: rgb(151, 190, 136); width: 53.33px; font-weight: 600; padding: 0.5rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-palette"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+                
+                <!-- draw page -->
+                <div id="draw-page" class="draw-page" style="position: absolute;">
+                    <div class="draw drawClass active" id="firstDrawServer" style="
+                        scrollbar-color: transparent rgba(255, 255, 255, 0);
+                        scrollbar-width: none;/* left: 330px; top: 50px; */
+                        width: 100%;height: 100%;z-index: 1px;transition: bottom 0.35s ease;
+                        position: relative;">
+                        <canvas class="whiteboard" width="678" height="730" style="
+                            position: fixed; left: 0; top: 0; z-index: 1;"></canvas>
+                        <div class="colors" style="z-index: 2;">
+                            <div class="colorpicker-draw" style="background-color: rgb(151, 190, 136); border-color: rgba(0, 0, 0, 0.17); border-width: thick; z-index: 2; border-style: solid;"></div>
+                            <!-- <i class="fa fa-eraser" id="eraser"></i> -->
+                            <button id="wipe" class="blur" style="border-width: 2px;border-style: solid;border: 1px solid rgba(255, 255, 255, 0.15);border-radius: 5px;/* background-color: transparent; */z-index: 2;">Wipe Whiteboard</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
+                
+                <!-- game page -->
+                <div id="game-page" class="game-page" style="position: absolute;">
+                    
+<div id="gamePage" style="grid-area: mid;z-index: 2;overflow-y: scroll;position: relative;transition: bottom 0.35s ease; max-height: 100%;" class="gamePageClass active">
+
+        <article class="block">
+            <header>
+                <h1>All Games</h1>
+            </header>
+                  <section>
+                <ul class="tiles"><li>
+                                        
+                                        <a href="https://test9141.github.io/zlax.io" title="Zlax.io">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/zlax.io.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/zlax.io.jpg');"></div>
+                                            <h3 class="item">Zlax.io</h3>
+                                        </a>
+                                </li><li>
+                                        
+                                        <a href="https://test9141.github.io/venge.io" title="Venge.io">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/venge.io.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/venge.io.jpg');"></div>
+                                            <h3 class="item">Venge.io</h3>
+                                        </a>
+                                </li><li>
+                                        
+                                        <a href="https://test9141.github.io/trooper.life" title="Trooper.life">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/trooper.life.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/trooper.life.jpg');"></div>
+                                            <h3 class="item">Trooper.life</h3>
+                                        </a>
+                                </li><li>
+                                        
+                                        <a href="https://test9141.github.io/slither.io" title="Slither.io">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/slither.io.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/slither.io.jpg');"></div>
+                                            <h3 class="item">Slither.io</h3>
+                                        </a>
+                                </li><li>
+                                        
+                                        <a href="https://test9141.github.io/skribbl.io" title="Skribbl.io">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/skribbl.io.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/skribbl.io.jpg');"></div>
+                                            <h3 class="item">Skribbl.io</h3>
+                                        </a>
+                                </li><li>
+                                        
+                                        <a href="https://test9141.github.io/microgravity.io" title="Microgravity.io">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/microgravity.io.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/microgravity.io.jpg');"></div>
+                                            <h3 class="item">Microgravity.io</h3>
+                                        </a>
+                                </li><li>
+                                        
+                                        <a href="https://test9141.github.io/losts.io" title="Losts.io">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/losts.io.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/losts.io.jpg');"></div>
+                                            <h3 class="item">Losts.io</h3>
+                                        </a>
+                                </li><li>
+                                        
+                                        <a href="https://test9141.github.io/lier.io" title="Lier.io">
+                                        
+                                            <div class="item image" style="background-image:
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/tile/lier.io.jpg'),
+                                        url('https://web.archive.org/web/20250415204127im_/https://iogames.fun/images/games/lier.io.jpg');"></div>
+                                            <h3 class="item">Lier.io</h3>
+                                        </a>
+                                </li></ul>
+            </section>
+                        
+                    <section>
+                        <div class="paginator">
+                                <div class="item current current-page">1</div>
+                                        
+                                        <a href="https://test9141.github.io/page2" class="item page next-page" title="Go to Page 2">
+                                        
+                                        2
+                                    </a>
+                        </div>
+                    </section><section>
+                <div class="text-center">
+                    <div id="iogames-fun_728x90_2" class="inline-block">
+                    </div>
+                </div>
+            </section>
+            <header>
+                <h2>What is an IO game?</h2>
+            </header>
+            <section class="text">
+                <p>IO &nbsp;game is &nbsp;a &nbsp;special kind of &nbsp;online game. First of &nbsp;all &nbsp;— IO &nbsp;game is &nbsp;a &nbsp;game which requires nothing to &nbsp;play but modern web browser and Internet connection. Second &nbsp;— IO &nbsp;game is &nbsp;free-to-play, massively multiplayer online game. Somebody in &nbsp;the Internet once described &nbsp;IO game as &nbsp;“A &nbsp;game that easy to &nbsp;understand yet hard to &nbsp;master”. This is &nbsp;general yet very good description of &nbsp;the cool &nbsp;IO game. You can play it &nbsp;5 &nbsp;minutes or &nbsp;you can play it &nbsp;5 &nbsp;hours &nbsp;— in &nbsp;both cases you’ll get a &nbsp;lot of &nbsp;fun. That’s what make &nbsp;IO games really awesome!</p>
+                <p>
+                    There are different types of &nbsp;IO games. In &nbsp;fact you can find a &nbsp;game of &nbsp;any genre among all of &nbsp;IO games. It’s not just simple action games like famous <a href="https://test9141.github.io/genres/agario" class="href">Agar.io</a>
+                    or &nbsp;<a href="https://test9141.github.io/genres/slitherio" class="href">Slither.io</a>
+                    . There are <a href="https://test9141.github.io/genres/platform" class="href">platformers</a>
+                    , <a href="https://test9141.github.io/genres/2d-shooter" class="href">2D &nbsp;shooters</a>
+                    or &nbsp;<a href="https://test9141.github.io/genres/racing" class="href">racing</a>
+                    . You can find even <a href="https://test9141.github.io/genres/rpg" class="href">RPG IO &nbsp;games</a>
+                    or &nbsp;<a href="https://test9141.github.io/genres/strategy" class="href">real-time strategies</a>
+                    . Today almost all popular game types can be &nbsp;found among &nbsp;IO games!
+                </p>
+            </section>
+            <section>
+                <div class="text-center">
+                    <div id="iogames-fun_728x90_3" class="inline-block">
+                    </div>
+                </div>
+            </section>
+        </article>
+</div>
+
+                </div>
+                <!-- end -->
+                
+                <!-- music page -->
+                <div id="music-page" class="music-page" style="position: absolute;">
+                    <div style="padding: 1.5rem 1rem 0.5rem 1rem;">
+                        <div class="music-player">
+                            <div class="track-name" id="trackName">Track Name</div>
+                            <div class="buttons">
+                                <i id="playPauseBtn" class="ti ti-player-pause" style="padding-right: 10px; 
+                                    padding-left: 10px;"></i>
+                            </div>
+                            <input type="range" id="seekSlider" min="0" max="100" value="0">
+                            <div class="time">
+                            <span id="currentTime">05:48</span> / <span id="totalDuration">00:00</span>
+                            </div>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="80">
+                        </div>
+                        <audio id="audioPlayer"></audio>
+                        <textarea id="url-music" placeholder="Music URL" style="color: white; 
+                            background-color: transparent; padding: 0px;"></textarea>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>            
+        </div>
+        
+        <div class="performance-mode" id="performance-mode">
+        <div style="display: inline;">Performance Mode Activated!</div>
+        <span></span><i class="fa fa-leaf" style="display: inline;"></i>
+        </div>
+</body></html>

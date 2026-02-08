@@ -1,0 +1,143 @@
+#dm-chat {
+	width: auto;
+	display: flex;
+	flex-direction: column-reverse;
+	height: calc(100% - 30px);
+}
+
+#dm-messages {
+	scrollbar-color: transparent rgba(255, 255, 255, 0.05);
+	scrollbar-width: none;
+}
+
+.dm-page {
+	position: fixed;
+	right: -100%;
+	width: calc(100% - 50px);
+	height: calc(100% - 50px);
+	background-color: rgba(26, 27, 30, 0.6);
+	backdrop-filter: blur(9px);
+	opacity: 0;
+	transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.dm-page.active {
+  right: 0px;
+  opacity: 1;
+  transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+.dm-chatroom {
+	position: fixed;
+	right: -100%;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.dm-chatroom-btns-page {
+	position: absolute;
+	right: -100%;
+	opacity: 0;
+	transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.dm-chat-page.active {
+	right: 0px;
+	opacity: 1;
+	transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+.dm-chatroom.active {
+	right: 0px;
+	opacity: 1;
+	transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+.dm-chatroom-btns-page.active {
+	right: 0px;
+	opacity: 1;
+	transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+#dm-box {
+	padding: 0.5em 0em 0.5em 0em;
+}
+
+#dm-nme {
+	border: none;
+	background-color: transparent;
+	/*	height: 10%; */
+	padding: 0 0.5em;
+	width: 100%;
+	color: white;
+	font-size: 16px;
+}
+
+#dm-msg {
+	border: none;
+	background-color: transparent;
+	/* height: 10%; */
+	padding: 0 0.5em;
+	width: 100%;
+	color: white;
+	font-size: 16px;
+}
+
+#dm-name {
+	/*    padding: 0 0.5em 0 0.5em;*/
+	margin: 0;
+	/*    position: absolute;*/
+	top: 1em;
+	left: 0px;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	height: 40px;
+}
+
+#dm-log {
+	/*    background-color: #101010; */
+	margin: 0;padding: 0.5em 0.5em 0.5em 0.5em;
+	/*  position: absolute;*/
+	top: 3em;
+	left: 0.5em;
+	right: 0.5em;
+	bottom: 3em;
+	overflow: auto;
+	/*	width: 540px; */
+	flex-direction: column-reverse;
+	display: flex;
+	flex-grow: 1;
+	height: calc(100vh - 148px);
+	overflow-y: auto;
+}
+
+#dm-message {
+	/*    padding: 0 0.5em 0 0.5em;*/
+	margin: 0;
+	/*    position: absolute;*/
+	bottom: 1em;
+	left: 0px;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	height: 40px;
+}
+
+#dm-colorpicker {
+    /* color: rgb(53, 84, 192); */
+    width: 50px;
+    /* height: 21px; */
+    /* background-color: rgb(53, 84, 192); */
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#dm-send {
+	width: 50px;
+}

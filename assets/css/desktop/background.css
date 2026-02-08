@@ -1,0 +1,39 @@
+#video-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
+	opacity: 1; /* Adjust opacity here */
+}
+
+.backgroundstyles {
+	overflow-x: scroll;
+	height: 80%;
+	width: 100%;
+	word-break: break-all;
+	text-wrap: wrap;
+	padding-left: 15px;
+	scrollbar-color: transparent rgba(255, 255, 255, 0.05);
+	scrollbar-width: none;
+	list-style: none;
+}
+
+.background-page {
+  position: fixed;
+  right: -100%;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  background-color: rgba(26, 27, 30, 0.6);
+  backdrop-filter: blur(9px);
+  opacity: 0;
+  transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.background-page.active {
+  right: 0px;
+  opacity: 1;
+  transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}

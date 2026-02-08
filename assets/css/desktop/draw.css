@@ -1,0 +1,60 @@
+.drawClass {
+ bottom: -1000px;
+}
+
+.drawClass.active {
+ bottom: 0;
+ transition: bottom 0.35s ease;
+ /* display: none; */
+ width: 100%;
+ overflow-y: hidden;
+ overflow-x: hidden;
+}
+.draw-page {
+  position: fixed;
+  right: -100%;
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  background-color: rgba(26, 27, 30, 0.6);
+  backdrop-filter: blur(9px);
+  opacity: 0;
+  transition: right 0.75s ease, opacity 0.2s ease;
+}
+
+.draw-page.active {
+  right: 0px;
+  opacity: 1;
+  transition: right 0.3s ease, opacity 0.5s ease 0.1s;
+}
+
+/**
+ * Canvas
+ */
+
+.colorpicker-draw { 
+  border-radius: 10px; 
+  width: 48px;
+    height: 48px;
+    background-color: black;
+}
+
+.whiteboard {
+  height: 100%;
+  width: 100%;
+}
+
+.colors {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#wipe {
+  position: absolute;
+  top: 50px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  left: 1px;
+}
