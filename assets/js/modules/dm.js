@@ -128,7 +128,7 @@
 		function clearUsers() {
 			var userClear = document.querySelectorAll(".usernameBtns");
 			userClear.forEach(e => e.remove());
-			var userClear = document.getElementByClassName(".noUserlist");
+			var userClear = document.getElementsByClassName(".noUserlist");
 			userClear.remove;
 		}
 		// Delete a singular user when they left on the left pane
@@ -320,7 +320,7 @@
     					addUser(data.nickname, data.toId, fromId);
     					// Remove "nobody is here" text if one user exists
     					if (users > 1 || users == 1) {
-							var checkIfUserlist = document.getElementByClassName("noUserlist")
+							var checkIfUserlist = document.getElementsByClassName("noUserlist")
 							if (checkIfUserlist) {
 	    						deleteNoUserlist();
 							};
