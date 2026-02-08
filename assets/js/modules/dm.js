@@ -359,7 +359,7 @@
     		// When websocket closes
     		ws.onclose = function(e) {
     			appendMessage("client", "Client", "Connection closed, reconnecting...");
-				console.log("%c Connection closed, reconnecting " + wsName, "color: red");
+				console.log("%c Connection closed, reconnecting " + ws, "color: red");
 				setTimeout(reconnect, 2000);
     		};
         };
@@ -372,7 +372,7 @@
 		}
 
 		// Establish the initial connection
-		establishConnection(wsName);
+		establishConnection(ws);
 	};
 
 	/*'use strict';
