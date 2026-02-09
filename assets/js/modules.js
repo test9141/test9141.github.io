@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     //dm();
+    game();
     buttons();
     backgrounds();
     gifAutoload();
