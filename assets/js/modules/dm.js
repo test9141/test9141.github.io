@@ -246,7 +246,7 @@
 
     			// Check if username is already stored in a cookie
     			// And also setup things with username, fromId and privId
-    			if (document.cookie) {
+                if (getCookie(privId) != null) {
     				var usernameInputEle = document.getElementById('dm-nme');
     				//console.log("Cookie name: " + getCookie("name"));
     				usernameInputEle.setAttribute('value', getCookie("name"));
