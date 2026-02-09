@@ -19,11 +19,8 @@ https://anarchychat.neocities.org
 ### jekyll theme
 https://github.com/script26/iogames-fancy
 
-### backend code of chat server (python, picows):
-https://github.com/tkrclient/pygames-chat
-
-### backend code of drawing/whiteboard server:
-https://github.com/tkrclient/iogames-draw
-
-
-.
+### backend
+chat - https://github.com/tkrclient/pygames-chat
+drawboard - https://github.com/tkrclient/iogames-draw
+dm - https://github.com/test9141/dm-code
+voicechat - https://github.com/test9141/voice-code
