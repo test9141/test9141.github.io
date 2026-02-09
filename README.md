@@ -24,6 +24,6 @@ chat - https://github.com/tkrclient/pygames-chat
 
 drawboard - https://github.com/tkrclient/iogames-draw
 
-dm - https://github.com/test9141/dm-code
+dm - https://github.com/test9141/dm-chat
 
-voicechat - https://github.com/test9141/voice-code
+voicechat - https://github.com/test9141/voicechat
