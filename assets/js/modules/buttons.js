@@ -25,6 +25,25 @@ function buttons() {
     'block-page', 'music-page', 'background-page',
     'dm-page', 'voicechat-page'
   ];
+
+  // Get cookie value
+  function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+  
+  if (getCookie("page") != null) {
+      const target = getCookie("page");
+      console.log(target);
+      const element = document.getElementById(target)
+    
+      pages.forEach(p => {
+          elements[p].classList.remove('active');
+      });
+      // Toggle current
+      element.classList.toggle('active');
+  }
   
   // Add click listeners
   pages.forEach(page => {
@@ -41,6 +60,8 @@ function buttons() {
       // Toggle current
       target.classList.toggle('active');
       console.log("clicked");
+
+      document.cookie = "page=" + page;
     });
   });
   
