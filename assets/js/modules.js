@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     perf();
     chatroom();
     music();
-    //spotify();
+    spotify();
 
 })
