@@ -61,64 +61,10 @@ layout: default
     <body>
 		<video id="video-background" autoplay="" loop="" style="opacity: 0.6;"></video>
         <div class="main" id="gridLayer">
-        <nav class="blur" id="navbar" style="">
-            <div class="logo desktop opac" id="logo-style">
-                <div class="logo-top menu list" style="grid-area: logo-top;display: flex;align-items: flex-end; padding-left: 0.50rem;">
-        			<a href="index.html">
-            			<span class="anarchychats titleName" style="color: white;">AnarchyChats</span><span class="com titleName" style="color: #ff9999;">.com</span>
-                    </a>
-                </div>
-                <div class="logo-below" style="grid-area: logo-bottom;display: flex;align-items: flex-start; padding-left: 0.50rem;">
-                    <span class="subtext subTitleName" style="color: grey;">By Lorenzino, mr.iogames, and more</span>
-                </div>
-            </div>
-            <div class="logo-image" id="logo-image">                
-		        <img src="assets/images/ARCH.webp" class="logotkr" style="opacity: 100%;">
-            </div>
-        </nav>
+			
+        	{% include navigation/topbar.html %}
             
-            <div class="sidebar blur" style="grid-area: sidebar; z-index: 3; overflow: scroll; scrollbar-width: none;">
-                <div class="button list opac" style="z-index: 0;height: 50px;
-                    display: flex;flex-direction: column;align-items: center;margin: 0;padding: 0;
-                    white-space: nowrap;">
-                    <a id="game-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-device-gamepad" style="font-weight: 600;
-                            padding: 0.50rem; font-size:28px;font-style: normal; display: block;"></i>
-                    </a>
-                    <a id="draw-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-pencil" style="font-weight: 600;
-                            padding: 0.50rem; font-size:28px;font-style: normal; display: block;"></i>
-                    </a>
-                    <a id="chat-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-message" style="font-weight: 500;
-                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
-                    </a>
-                    <a id="block-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-forbid-2" style="font-weight: 600; 
-                            padding: 0.50rem; font-size: 28px; font-style: normal; display:block;"></i>
-                    </a>
-                    <a id="music-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-music" style="font-weight: 600; 
-                            padding: 0.50rem; font-size: 28px; font-style: normal; display:block;"></i>
-                    </a>
-                    <a id="background-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-polaroid" style="font-weight: 500;
-                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
-                    </a>
-                    <a id="dm-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-messages" style="font-weight: 500;
-                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
-                    </a>
-                    <a id="voicechat-page-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-microphone" style="font-weight: 500;
-                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
-                    </a>
-                    <a id="fullscreen-btn" class="item nav-button desktop-button">
-                        <i class="ti ti-arrows-maximize" style="font-weight: 500;
-                            padding: 0.50rem; font-size: 28px; font-style: normal; display: block;"></i>
-                    </a>
-                </div>                
-            </div>
+            {% include navigation/sidebar.html %}
             
             <div class="mid" style="grid-area: mid; z-index: 0;">
 				{% include background.html %}
