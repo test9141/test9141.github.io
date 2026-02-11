@@ -16,9 +16,6 @@ https://anarchychat.nekoweb.org
 
 https://anarchychat.neocities.org
 
-### jekyll theme
-https://github.com/script26/iogames-fancy
-
 ### backend
 chat - https://github.com/tkrclient/pygames-chat
 
