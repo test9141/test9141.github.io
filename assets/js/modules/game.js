@@ -39,7 +39,7 @@ function game() {
             var frameGame = document.createElement('iframe');
             frameGame.src = appendHttps + url;
             frameGame.id = "gameBox";
-            frameGame.style.cssText = "width: 100%; height: calc(100% - 100px);";
+            frameGame.style.cssText = "width: 100%; height: 100%;";
             appendGame.appendChild(frameGame);
         } else {
             console.warn("LOADING GAME: " + appendHttps + url);
