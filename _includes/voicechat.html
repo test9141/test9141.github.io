@@ -1,0 +1,21 @@
+				<!-- voicechat page -->
+				<div id="voicechat-page" class="voicechat-page" style="position: absolute;">
+					<div id="voice-chatroom-btns-page3" style="width: 100%; position: absolute; height: 100%;" class="voice-chatroom-btns-page active">
+						<div style="padding: 1.5rem 1rem 0.5rem 1rem;list-style: none; left: 0px;" id="voice-chatroom-btns" class="voice-chatroom-btns"></div>
+					</div>
+					<div id="voice-chatroom" class="voice-chatroom">
+                        <div id="voice-chat" class="voice-chat" style="position: absolute;top: 0px;left: 0px;width: 100%;">
+                            <form id="voice-message" style="display: grid;grid-template-areas:&quot;input button&quot;;grid-template-columns: 1fr auto;grid-template-rows: 48px;height: 48px;" onSubmit="return false;">
+                                <input type="text" id="voice-msg" placeholder="Message" size="58" onsubmit="return false;">
+                                <i type="submit" id="voice-send" value="Send" style="background-color: transparent;color: white;padding: 1rem;width: 53.33px; font-weight: 600; padding: 0.50rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-send"></i>
+                            </form>
+                            <div id="voice-log"></div>
+							<form id="voice-name" style="display: grid;grid-template-areas:&quot;back input button&quot;;grid-template-columns: auto 1fr auto;grid-template-rows: 48px;height: 48px;">
+								<div id="voice-backarrow" style="padding: 0.5rem; font-size: 28px;" class="ti ti-logout voice-backarrow hoverButton"></div>
+                                <input type="text" id="voice-nme" placeholder="Name" size="58" onsubmit="return false;">
+                                <div id="voice-colorpicker" style="color: rgb(151, 190, 136); width: 53.33px; font-weight: 600; padding: 0.5rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-palette"></div>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+				<!-- end -->
