@@ -1,0 +1,21 @@
+                <!-- chat page -->
+                <div id="chat-page" class="chat-page active" style="position: absolute;">
+					<div id="chatroom-btns-page" style="width: 100%; position: absolute; height: 100%;" class="chatroom-btns-page active">
+						<div style="padding: 1.5rem 1rem 0.5rem 1rem;list-style: none; left: 0px;" id="chatroom-btns" class="chatroom-btns"></div>
+					</div>
+					<div id="chatroom" class="chatroom">
+                        <div id="chat" class="chat" style="position: absolute;top: 0px;left: 0px;width: 100%;">
+                            <form id="message" style="display: grid;grid-template-areas:&quot;input button&quot;;grid-template-columns: 1fr auto;grid-template-rows: 48px;height: 48px;">
+                                <input type="text" id="msg" placeholder="Message" size="58">
+                                <i type="submit" id="send" value="Send" style="background-color: transparent;color: white;padding: 1rem;width: 53.33px; font-weight: 600; padding: 0.50rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-send"></i>
+                            </form>
+                            <div id="log"></div>
+							<form id="name" style="display: grid;grid-template-areas:&quot;back input button&quot;;grid-template-columns: auto 1fr auto;grid-template-rows: 48px;height: 48px;">
+								<div id="backarrow" style="padding: 0.5rem; font-size: 28px;" class="ti ti-logout backarrow hoverButton"></div>
+                                <input type="text" id="nme" placeholder="Name" size="58">
+                                <div id="colorpicker" style="color: rgb(151, 190, 136); width: 53.33px; font-weight: 600; padding: 0.5rem; font-size: 28px; font-style: normal; display: block;" class="ti ti-palette"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
